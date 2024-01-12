@@ -19,7 +19,7 @@ void setup()
 {
   Serial.begin(115200);
   pinMode(LED, OUTPUT);
-  digitalWrite(LED, true);
+  // digitalWrite(LED, true);
   pinMode(TRIAC, OUTPUT);
   digitalWrite(TRIAC, true);
   pinMode(IN_A, INPUT_PULLUP);
