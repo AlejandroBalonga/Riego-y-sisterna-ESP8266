@@ -62,6 +62,6 @@ void loop()
     WiFiManager wifiManager;
     wifiManager.autoConnect("Config Riego WIFI");
   }
-  digitalWrite(LED, digitalRead(IN_A));
+  digitalWrite(LED, !digitalRead(IN_A));
   digitalWrite(TRIAC, digitalRead(IN_B));
 }
