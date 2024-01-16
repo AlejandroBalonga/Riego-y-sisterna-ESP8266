@@ -37,6 +37,8 @@ GitHubFsOTA FsOta(VERSION, RELEASE_URL, "filesystem.bin", true);
 // Set i2c address
 PCF8574 pcf8574(0x20);
 
+void listRoot();
+
 void setup()
 {
   Serial.begin(115200);
@@ -48,6 +50,10 @@ void setup()
   pinMode(IN_B, INPUT_PULLUP);
   WiFiManager wifiManager;
   wifiManager.autoConnect("Config Riego WIFI");
+
+  LittleFS.begin();
+  listRoot();
+
   // Chech for updates
   FsOta.handle();
   OsOta.handle();
@@ -64,4 +70,18 @@ void loop()
   }
   digitalWrite(LED, !digitalRead(IN_A));
   digitalWrite(TRIAC, digitalRead(IN_B));
+}
+
+void listRoot()
+{
+  Serial.printf("Listing root directory\r\n");
+
+  File root = LittleFS.open("/", "r");
+  File file = root.openNextFile();
+
+  while (file)
+  {
+    Serial.printf("  FILE: %s\r\n", file.name());
+    file = root.openNextFile();
+  }
 }
