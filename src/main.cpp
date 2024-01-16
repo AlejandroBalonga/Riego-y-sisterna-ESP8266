@@ -58,7 +58,9 @@ void setup()
   listRoot();
 
   // Chech for updates
+  Serial.printf("Chech for FileSistem updates\r\n");
   FsOta.handle();
+  Serial.printf("Chech for Firmware updates\r\n");
   OsOta.handle();
   Serial.printf("fin del setup");
 }
