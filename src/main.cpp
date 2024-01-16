@@ -51,12 +51,16 @@ void setup()
   WiFiManager wifiManager;
   wifiManager.autoConnect("Config Riego WIFI");
 
+  Serial.printf("Current firmware version: %s\n", VERSION);
+  Serial.printf("Current filesystem version: %s\n", VERSION);
+
   LittleFS.begin();
   listRoot();
 
   // Chech for updates
   FsOta.handle();
   OsOta.handle();
+  Serial.printf("fin del setup");
 }
 
 void loop()
