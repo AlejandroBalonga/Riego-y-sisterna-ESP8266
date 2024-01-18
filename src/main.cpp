@@ -12,11 +12,13 @@
 #include <GitHubFsOTA.h>
 
 // This string should correspond to github tag used for Releasing (via. Github Actions)
-#define VERSION "0.0.2"
+// https://registry.platformio.org/libraries/axcap/Esp-GitHub-OTA
+#define VERSION "0.0.3"
+/*despues de cambiar esta version crear un nuevo TAG como v0.0.2 con la version actual y */
 
 // Replace your_username/your_repo with your values (ex. axcap/Esp-GitHub-OTA)
 // This is a link to repo where your firmware updates will be pulled from
-// #define RELEASE_URL "https://api.github.com/repos/your_username/your_repo/releases/latest"
+// #define RELEASE_URL "https://api.github.com/repos/AlejandroBalonga/Riego-y-sisterna-ESP8266/releases/latest"
 
 // Use this version of the URL together with
 // Line 22: GitHubOTA GitHubOTA(VERSION, RELEASE_URL, "firmware.bin", "filesystem.bin", "/.fs_update_pending", false);
