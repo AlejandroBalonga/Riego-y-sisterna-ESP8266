@@ -14,7 +14,8 @@
 // This string should correspond to github tag used for Releasing (via. Github Actions)
 // https://registry.platformio.org/libraries/axcap/Esp-GitHub-OTA
 #define VERSION "0.0.3"
-/*despues de cambiar esta version crear un nuevo TAG como v0.0.2 con la version actual y */
+/*despues de cambiar esta version crear un nuevo TAG como v0.0.2
+ con la version actual y realizar el commit y push */
 
 // Replace your_username/your_repo with your values (ex. axcap/Esp-GitHub-OTA)
 // This is a link to repo where your firmware updates will be pulled from
